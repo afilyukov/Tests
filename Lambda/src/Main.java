@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         int a = 2;
@@ -28,6 +33,17 @@ public class Main {
         new Main().processTwoNumbers(a,b, (i1, i2) -> {
             System.out.println(i1*i2);
             return i1+i2;});
+
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
+        integers.forEach(item -> System.out.println(item));
+
+        List<String> colors = Arrays.asList("Black", "White", "Apple", "Red");
+        Collections.sort(colors, (o1, o2)-> {
+            String o1FirstLetter = o1.substring(0);
+            String o2FirstLetter = o2.substring(0);
+            return o1FirstLetter.compareTo(o2FirstLetter);
+        });
+        System.out.println(colors);
     }
 
     private int sum(int a, int b){
